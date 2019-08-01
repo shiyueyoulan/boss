@@ -115,3 +115,13 @@
       1. Redux专注于状态管理，和react解耦
       2. 单一状态，单向数据流
       3. 核心概念： store，state，action，reducer
+
+### 前后端联调
+  ##使用axios发送异步请求
+    1. 端口不一致， 使用proxy配置转发
+    2. axios拦截器，统一loading处理
+    3. redux里使用异步数据，渲染页面
+
+## 开发模式
+  # 基于cookie用户验证
+   用户加载页面   (带cookie像后端获取信息)-> 用户加载页面 ->(登录页面(登录成功 前端存储cookie)) -> app内部页面

@@ -12,19 +12,19 @@ const User = mongoose.model('user', new mongoose.Schema({
   age: {type: Number, require: true}
 }))
 //新增数据
-// User.create({
-//   user: 'xiaoming',
-//   age: 18
-// }, function(err, doc){
-//   if(!err) {
-//     console.log(doc)
-//   }else{
-//     console.log(err)
-//   }
-// })
+User.create({
+  user: 'xiaoming',
+  age: 18
+}, function(err, doc){
+  if(!err) {
+    console.log(doc)
+  }else{
+    console.log(err)
+  }
+})
 //新建app
 //删除数据
-// User.remove({age:18}, function(err, doc){
+// User.remove({age:26}, function(err, doc){
 //   console.log(doc)
 // })
 //修改数据
