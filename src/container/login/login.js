@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import Logo from '../../component/logo/logo'
 import { List, InputItem, WingBlank, WhiteSpace, Button } from 'antd-mobile'
-import { login } from '../../redux/user.redux'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import { login } from '../../redux/user.redux'
+import Logo from '../../component/logo/logo'
 
 @connect(
   state=>state.user,
@@ -45,6 +45,7 @@ class Login extends Component {
             <WhiteSpace/>
             <InputItem
               onChange={v=>this.handleChange('pwd', v)}
+              type='password'
             >密码</InputItem>
           </List>
           <Button 
