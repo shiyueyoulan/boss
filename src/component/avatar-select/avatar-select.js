@@ -12,10 +12,10 @@ class AvatarSelect extends Component {
     }
   }
   render() {
-    const avatarList = '1,2,3,4,5,6'
+    const avatarList = 'boy,bull,chick,crab,girl,hedgehog,hippopotamus,koala,lemur,man,pig,tiger,whale,woman,zebra'
       .split(',')
       .map(v => ({
-        icon: require(`../images/${v}.jpg`),
+        icon: require(`../images/${v}.png`),
         text: v
       }))
     const gridHeader = this.state.icon ? <div>
@@ -26,7 +26,7 @@ class AvatarSelect extends Component {
       <div>
         <List renderHeader={()=>gridHeader}>
           <Grid data={avatarList}
-            columnNum={6}
+            columnNum={5}
             onClick={elm => {
               this.setState(elm)
               this.props.selectAvatar(elm.text)

@@ -49,7 +49,7 @@ class GeniusInfo extends Component {
         </InputItem>
         <TextareaItem
           onChange={v=>this.onChange('desc', v)}
-          rows={6}
+          rows={4}
           autoHeight
           title='自我评价'
         >

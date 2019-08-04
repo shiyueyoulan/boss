@@ -48,7 +48,7 @@ class BossInfo extends Component {
         </InputItem>
         <TextareaItem 
           onChange={v=>this.onChange('desc', v)}
-          rows={6}
+          rows={4}
           autoHeight
           title='职位简介'
           >
