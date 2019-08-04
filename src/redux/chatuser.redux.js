@@ -6,7 +6,6 @@ const initState={
   userlist: []
 }
 
-
 function userList(data){
   return { type: USER_LIST, payload: data }
 }

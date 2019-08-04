@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDom from 'react-dom'
 import { Provider } from 'react-redux'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom'
 import { createStore, applyMiddleware, compose } from 'redux'
 import  thunk  from 'redux-thunk'
 import Register from './container/regist/register'
@@ -24,6 +24,7 @@ ReactDom.render(
       <div>
         <AuthRoute></AuthRoute>
         <Switch>
+          <Redirect exact from='/' to='/login'></Redirect>
           <Route path='/geniusinfo' component={GeniusInfo}></Route>
           <Route path='/bossinfo' component={BossInfo}></Route>
           <Route path='/login' component={Login}></Route>

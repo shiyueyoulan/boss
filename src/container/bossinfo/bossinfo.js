@@ -31,6 +31,7 @@ class BossInfo extends Component {
     })
   }
   render() {
+    console.log(this.props.redirectTo)
     return (
       <div>
         {this.props.redirectTo && this.props.redirectTo !== this.props.location.pathname?
