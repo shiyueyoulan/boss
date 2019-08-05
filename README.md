@@ -129,3 +129,8 @@
 ## 高阶组件
   # 属性代理和反向继承
     提高复用性
+
+## Sockit.io 
+基于websocket
+  io.on 监听事件
+  io.emit 触发事件
