@@ -71,8 +71,8 @@
 
 
 
-### 项目
-  # Express + mongodb开发web后台接口
+## 项目
+  ### Express + mongodb开发web后台接口
     1. express开发web接口
      - 基于nodejs的极简开发框架
      - app.get/app.post分别开发get和post接口
@@ -88,35 +88,35 @@
           3. find和findOne用来查询数据
         - 一个数据库对应一个模型，通过模型对数据库进行操作
 
-  ##组件之间的数据传递
+  ###组件之间的数据传递
     1. 使用<组件 数据="值">的形式传递
     2. 组建里使用this.props获取值
     3. 若组件只有render函数， 还可以用函数的形式写组件
 
-  ##组件内部state
+  ###组件内部state
     组件内部通过state管理状态
       1. JSX本质就是js， 所以直接数组.map 渲染列表
       2. Constructor设置初始状态，记得执行super(props)
       3. State就是一个不可变的对象， 使用this.state来获取 
 
-  ##onClick点击事件
+  ###onClick点击事件
     1. JSX里，onClick={this.函数名}来绑定事件
     2. this引用的问题，需要在构造函数里用bind绑定this
     3. this.setState修改state，是返回新的state，而不是修改
 
-  ##React 生命周期
+  ###React 生命周期
     React组件有若干钩子函数，在组件不同的状态执行
       1. 初始化周期
       2. 组件重新渲染生命周期
       3. 组件卸载生命周期
 
-  ## Redux
+  ### Redux
     专注于状态管理的库
       1. Redux专注于状态管理，和react解耦
       2. 单一状态，单向数据流
       3. 核心概念： store，state，action，reducer
 
-### 前后端联调
+## 前后端联调
   ##使用axios发送异步请求
     1. 端口不一致， 使用proxy配置转发
     2. axios拦截器，统一loading处理

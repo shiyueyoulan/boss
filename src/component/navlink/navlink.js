@@ -3,18 +3,24 @@ import PropTypes from 'prop-types'
 import { TabBar } from 'antd-mobile'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+import { getMsgList, recvMsg } from '../../redux/chat.redux'
 
 
 @withRouter
 @connect(
-  state=>state.chat
+  state=>state.chat,
+  {getMsgList, recvMsg}
 )
 class NavLinkBar extends Component {
   static propTypes={
     data: PropTypes.array.isRequired
   }
+  componentDidMount(){
+    this.props.getMsgList()
+    this.props.recvMsg()
+  }
   render() { 
-    console.log(this.props)
+    console.log(this.props,'--')
     const navList = this.props.data.filter(v=>!v.hide)
     const { pathname } = this.props.location
     return (
