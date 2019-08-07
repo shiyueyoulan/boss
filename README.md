@@ -127,10 +127,14 @@
    用户加载页面   (带cookie像后端获取信息)-> 用户加载页面 ->(登录页面(登录成功 前端存储cookie)) -> app内部页面
 
 ## 高阶组件
-  # 属性代理和反向继承
+  ### 属性代理和反向继承
     提高复用性
 
 ## Sockit.io 
 基于websocket
   io.on 监听事件
   io.emit 触发事件
+
+##React+Redux常见性能优化策略
+  虚拟dom更改dom是在同层级下 redux要避免跨层级操纵数据
+  shouldComponentUpdate 是否更新

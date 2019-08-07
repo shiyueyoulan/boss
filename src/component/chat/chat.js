@@ -2,13 +2,13 @@ import React, { Component } from 'react'
 import { List, InputItem, NavBar, Icon } from 'antd-mobile'
 import { connect } from 'react-redux'
 import io from 'socket.io-client'
-import { getMsgList, sendMsg, recvMsg } from '../../redux/chat.redux'
+import { getMsgList, sendMsg, recvMsg, readMsg } from '../../redux/chat.redux'
 import { getChatId } from '../../util'
 const socket = io('ws://localhost:9093')
 
 @connect(
   state => state,
-  { getMsgList, sendMsg, recvMsg }
+  { getMsgList, sendMsg, recvMsg, readMsg }
 )
 class Chat extends Component {
   constructor(props) {
@@ -19,17 +19,19 @@ class Chat extends Component {
     }
   }
   componentDidMount() {
-    
-      this.props.getMsgList()
-      this.props.recvMsg()
-    
-    
-    // socket.on('recvmsg',(data)=>{
-    //   console.log(data)
-    //   this.setState({
-    //     msg: [...this.state.msg, data.text]
-    //   })
-    // })
+    this.props.getMsgList()
+    this.props.recvMsg()
+    const to = this.props.match.params.user
+    this.props.readMsg(to)
+  }
+  componentWillUnmount(){
+    const to = this.props.match.params.user
+    this.props.readMsg(to)
+  }
+  fixCarousel(){
+    setTimeout(()=>{
+      window.dispatchEvent(new Event('resize'))
+    },0)
   }
   handleSubmit = () => {
     // socket.emit('sendmsg', {text:this.state.text})
